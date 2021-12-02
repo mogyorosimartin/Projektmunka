@@ -5,11 +5,80 @@
         <title>Projektmunka Gyűrű 3D</title>
         <style>
             canvas {
-                width: 100%;
+                position: absolute;
+                width:70%;
                 height:100%;
             }
             html, body {
                 margin:0px;
+            }
+            .container    {
+                background-color: gray;
+            }
+            .UI
+            {
+                position: relative;
+                width: 30%;
+                left:70%;
+               
+            }            
+            input[type=text], input[type=password] {
+                width: auto;                
+                padding: 12px 20px;                
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                position: relative;
+                left: 10%;
+                border-radius: 20px;
+            }
+            button {
+                background-color: #0e415f;
+                color: white;
+                padding: 2% ;
+                margin: 1%;
+                width: 50px;
+                height:  50px;
+                position: relative;
+                border: 1px solid darkgray;
+                cursor: pointer;
+                border-radius: 20%;              
+                                          
+            }
+            .Rings
+            {
+                margin: 20px;
+            }
+            button[type=submit]
+            {
+                background-color: #2f1d0d;
+                color: white;                
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 30%;   
+                position: relative;
+                left:50%;
+                border-radius: 5px;
+                text-align: center; line-height: 0px;
+            }
+            .Model button
+            {                   
+                padding: 2% ;
+                margin: 1%;
+                width: 100px;
+                height:   100px;                
+                border-radius: 20%; 
+                background-color:#292929;
+            }
+            .Gems button
+            {
+                background-color:transparent;
+                border:none;
+            }
+            button:hover {
+                opacity: 0.8;
             }
         </style>
     </head>
@@ -23,12 +92,34 @@
         <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
         <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script> 
         <script src="main.js" type="module"></script>
-        <button id="button" type="button">Ring1</button>
-        <button id="button1" type="button">Ring2</button>
-        <button id="button2" type="button">Gold</button>
-        <button id="button3" type="button">Silver</button>
-        <button id="button4" type="button">Red</button>
-        <button id="button5" type="button">Blue</button>
-        <button id="button6" type="button">White</button>
+        <div class="UI">
+            <div class="login">
+                <div class="container">                
+                    <input type="text" placeholder="Username" name="uname" required>      
+                    <input type="password" placeholder="Password" name="psw" required>            
+                    <button type="submit">Login</button>               
+                </div>   
+            </div>
+                  
+            <div class="Rings">
+                <label>Gyűrűk</label> 
+                <div class="Model">
+                <button id="button" type="button"> <img src="assets/rings/RING1/RING1.png" width="100%" height="100%" alt="RING1" /></button>
+                <button id="button1" type="button"><img src="assets/rings/RING2/RING2.png" width="100%" height="100%" alt="RING2"/></button>
+                </div>
+                <div class="Metal">
+                    <label>Fémek</label><br>
+                    <button id="button2" type="button" style="background-color: goldenrod;"></button>
+                    <button id="button7" type="button" style="background-color: rosybrown;"></button>
+                    <button id="button3" type="button" style="background-color: silver;"></button>
+                </div>
+                <div class="Gems" >
+                <label>Drágakövek</label><br>
+                <button id="button4" type="button" style="background-image: url(assets/rings/gems/RED.png); background-size:cover;"></button>
+                <button id="button5" type="button" style="background-image: url(assets/rings/gems/BLUE.png); background-size:cover;"></button>
+                <button id="button6" type="button" style="background-image: url(assets/rings/gems/White.png); background-size:cover;"></button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

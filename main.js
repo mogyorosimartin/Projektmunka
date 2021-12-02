@@ -115,6 +115,10 @@ function createScene()
         currentcolors[0]=new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647)
         createRing(scene,current,currentcolors[0],currentcolors[1]);       
      };
+     document.getElementById('button7').onclick=function(){
+        currentcolors[0]=new BABYLON.Color3(0.7176,0.4314,0.4745)
+        createRing(scene,current,currentcolors[0],currentcolors[1]);       
+     };
      document.getElementById('button4').onclick=function(){
         currentcolors[1]=new BABYLON.Color3.Red()
         createRing(scene,current,currentcolors[0],currentcolors[1]);

@@ -132,6 +132,10 @@ function createScene()
         currentcolors[1]=new BABYLON.Color3.White()
         createRing(scene,current,currentcolors[0],currentcolors[1]);      
      };
+     document.getElementById('button8').onclick=function(){
+        currentcolors[1]=new BABYLON.Color3.FromHexString("#50C878");
+        createRing(scene,current,currentcolors[0],currentcolors[1]);      
+     };
     scene.createDefaultEnvironment();
     scene.environmentTexture=new BABYLON.HDRCubeTexture("assets/skybox/parking.hdr",scene,128, false, true, false, true);    
     return scene;

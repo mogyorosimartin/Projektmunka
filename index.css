@@ -1,0 +1,254 @@
+canvas {
+    position: absolute;
+    width:70%;
+    height:100%;
+    background-color: #313975;
+     outline: none;               
+}
+html, body {
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: #313975;
+     
+    
+}
+.Labels
+{
+    margin-top: 0px;
+    background-color: #17151f;
+    font-size: 20px;                
+    color:white;
+    text-align: center;
+    box-shadow: 0px px rgb(41, 40, 40);
+    width: 70%;                
+    padding: 5px;
+    margin: 12px auto; 
+    display:block;
+    border-radius: 20px;
+    
+}
+.login    {
+    background-color: #292B3D;
+    align-items: center;               
+}
+.UI
+{
+    position: relative;
+    width: 30%;
+    left:70%;             
+}                      
+input[type=text], input[type=password] {
+    width: auto;                
+    padding: 5px;
+    width: 80%; 
+    height: 60px;  
+    font-size: x-large;                       
+    margin: 0px auto;                
+    display:block;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    position: relative;             
+    border-radius: 10px;                
+}
+button {
+    background-color: #0e415f;
+    color: white;
+    padding: 2% ;
+    margin: 8px;
+    width: 50px;
+    height:  50px;
+    position: relative;
+    border: 1px solid darkgray;
+    cursor: pointer;
+    border-radius: 20%;              
+                              
+}            
+button[type=submit]
+{
+    background-color: #0824F9;
+    color: white;                
+    margin: 8px 0;
+    border: 1px solid rgb(167, 161, 255);
+    cursor: pointer;
+    width: 30%;   
+    position: relative;
+    left:40%;
+    border-radius: 5px;
+    text-align: center; line-height: 0px;
+    
+}
+button[type=register]
+{
+    background-color: #1D2EAD;
+    color: white;                
+    margin: 8px 0;
+    border: 1px solid rgb(167, 161, 255);
+    cursor: pointer;
+    width: 20%;   
+    position: relative;
+    left:40%;
+    border-radius: 5px;
+    text-align: center; line-height: 0px;
+    
+}
+.Model
+{   
+    text-align: center;               
+    
+}            
+.Model button
+{                   
+    padding: 2% ;
+    margin: 1%;
+    width: 100px;
+    height:   100px;                
+    border-radius: 20%; 
+    background-color:#292929;
+
+}
+.Gems
+{
+    text-align: center;  
+}
+.Gems button
+{
+    background-color:transparent;
+    border:none;
+}
+.Metal 
+{
+    text-align: center;  
+}
+button:hover {
+    opacity: 0.8;
+}
+@media only screen and (max-width: 1024px) {
+    canvas {
+    position: absolute;
+    width:70%;
+    height:100%;
+    background-color: #313975;
+    
+}
+html, body {
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: #313975;
+    
+     
+    
+}
+.Labels
+{
+    margin-top: 0px;
+    background-color: #17151f;
+    font-size: 10px;                
+    color:white;
+    text-align: center;
+    box-shadow: 0px px rgb(41, 40, 40);
+    width: 70%;                
+    padding: 2px;
+    margin: 6px auto; 
+    display:block;
+    border-radius: 20px;
+    
+}
+.login    {
+    background-color: #292B3D;
+    align-items: center;               
+}
+.UI
+{
+    position: relative;
+    width: 30%;
+    left:70%;             
+}                      
+input[type=text], input[type=password] {
+    width: auto;                
+    padding: 5px;
+    width: 80%; 
+    height: 30px;  
+    font-size: small;                       
+    margin: 0px auto;                
+    display:block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    position: relative;             
+    border-radius: 10px;                
+}
+button {
+    background-color: #0e415f;
+    color: white;
+    padding: 2% ;
+    margin: 4px;
+    width: 25px;
+    height:  25px;
+    position: relative;
+    border: 1px solid darkgray;
+    cursor: pointer;
+    border-radius: 20%;  
+                
+                              
+}            
+button[type=submit]
+{
+    background-color: #0824F9;
+    color: white;                
+    margin: 4px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;   
+    position: relative;
+    left:40%;
+    border-radius: 5px;
+    text-align: center; line-height: 0px;
+    font-size: x-small;
+    
+}
+button[type=register]
+{
+    background-color: #1D2EAD;
+    color: white;                
+    margin: 4px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;   
+    position: relative;
+    left:40%;
+    border-radius: 5px;
+    text-align: center; line-height: 0px;
+    font-size: x-small;
+    
+}
+.Model
+{   
+    text-align: center;               
+    
+}            
+.Model button
+{                   
+    padding: 2% ;
+    margin: 1%;
+    width: 50px;
+    height:   50px;                
+    border-radius: 20%; 
+    background-color:#292929;
+
+}
+.Gems
+{
+    text-align: center;  
+}
+.Gems button
+{
+    background-color:transparent;
+    border:none;
+}
+.Metal 
+{
+    text-align: center;  
+}
+button:hover {
+    opacity: 0.8;
+}
+}

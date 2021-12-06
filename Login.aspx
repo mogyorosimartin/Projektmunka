@@ -19,8 +19,8 @@
     <script src="main.js" type="module"></script>
     <div class="UI">
         <div class="login"><form id="form1" runat="server">                               
-                <asp:TextBox ID="TextBox_UserName" runat="server"></asp:TextBox> <br />       
-                <asp:TextBox ID="TextBox_Password" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox_UserName" placeholder="Username" runat="server"></asp:TextBox> <br />       
+                <asp:TextBox ID="TextBox_Password" TextMode="Password" placeholder="Password" runat="server"></asp:TextBox><br />
                 <asp:Label ID="Failure" Text="" runat="server"></asp:Label><br />
                 <asp:Button ID="Login1" runat="server" Text="Login" OnClick="Login1_Click" />
                 <asp:Button ID="Register1" runat="server" Text="Register" OnClick="Register1_Click" /><br /> 

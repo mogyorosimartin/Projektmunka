@@ -30,7 +30,7 @@ function createRing(scene,ringmodel,color1,color2){
             container=[];
         })
     }    
-    BABYLON.SceneLoader.ImportMesh(null,`/assets/rings/${ringmodel}/`,'scene.GLTF',scene, (meshes)=>{
+    BABYLON.SceneLoader.ImportMesh(null,`assets/rings/${ringmodel}/`,'scene.GLTF',scene, (meshes)=>{
        // console.log(meshes); 
         meshes.forEach((mesh)=>{
             container.push(mesh);

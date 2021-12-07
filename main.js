@@ -85,6 +85,7 @@ function createLight(scene){
     
 
 }
+
 function createRing(scene,ringmodel,color1,color2){     
     
     if(container.length!=0)
@@ -165,7 +166,6 @@ function createScene()
  }
  
  const mainScene=createScene();
-
  engine.runRenderLoop(()=>{
      mainScene.render();
      

@@ -1,9 +1,9 @@
-canvas {
-    position: absolute;
+canvas {   
     width:70%;
     height:100%;
     background-color: #313975;
-     outline: none;               
+     outline: none;  
+     position: fixed;             
 }
 html, body {
     margin:auto;
@@ -29,13 +29,14 @@ html, body {
 }
 .login    {
     background-color: #292B3D;
-    align-items: center;               
+    align-items: center;
+ padding-bottom: 5%;               
 }
 .UI
 {
     position: relative;
     width: 30%;
-    left:70%;             
+              float:right;
 }
 span {
     color: white;
@@ -107,6 +108,49 @@ input[type=submit] {
     text-align: center; line-height: 0px;
     
 }
+#GridView1
+{
+    background-color: rgba(65, 62, 62,0.3);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color:#0e73d1;    
+    border-radius: 5px;
+    border-color:black; 
+    
+    
+}
+#GridView1 a
+{ 
+       text-decoration: none;
+       
+}
+th a
+{
+    color:#0e73d1;   
+}
+#GridView1 td, th
+{
+    padding: 10px;  
+}
+#UI1 h1
+{
+    text-align: center;
+}
+#UI1 input[type=submit]
+{
+    margin-bottom: 5%;
+}
+a.HyperLink1
+{
+    color:green;
+    font-size: x-large;
+}
+a.HyperLink2
+{
+    font-size: x-large;
+    color:red;
+}
 #Save
 {
     background-color: #1D2EAD;
@@ -152,133 +196,55 @@ input[type=submit] {
 button:hover {
     opacity: 0.8;
 }
-@media only screen and (max-width: 1024px) {
-    canvas {
-    position: absolute;
-    width:70%;
-    height:100%;
-    background-color: #313975;
-    
-}
-html, body {
-    margin:auto;
-    font-family: Arial, Helvetica, sans-serif; 
-    background-color: #313975;
-    
-     
-    
-}
-.Labels
-{
+h1{
     margin-top: 0px;
-    background-color: #17151f;
-    font-size: 10px;                
-    color:white;
-    text-align: center;
-    box-shadow: 0px px rgb(41, 40, 40);
-    width: 70%;                
-    padding: 2px;
-    margin: 6px auto; 
-    display:block;
-    border-radius: 20px;
+}
+#LoginID1
+{
+    text-align: right;
     
 }
-.login    {
-    background-color: #292B3D;
-    align-items: center;               
+#LoginID1 h1
+{
+    margin-bottom: 0px;
+}
+#LoginID1 a
+{
+    color: darkgray;
+    font-size: 20px;
+    
+}
+@media only screen and (max-width: 1024px) 
+{
+canvas
+{
+    width: 65%;
 }
 .UI
 {
-    position: relative;
-    width: 30%;
-    left:70%;             
-}                      
+    width: 35%;
+}
+h1{
+    font-size:large;
+}
 input[type=text], input[type=password] {
-    width: auto;                
-    padding: 5px;
-    width: 80%; 
-    height: 30px;  
-    font-size: small;                       
-    margin: 0px auto;                
-    display:block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    position: relative;             
-    border-radius: 10px;                
-}
-button {
-    background-color: #0e415f;
-    color: white;
-    padding: 2% ;
-    margin: 4px;
-    width: 25px;
-    height:  25px;
-    position: relative;
-    border: 1px solid darkgray;
-    cursor: pointer;
-    border-radius: 20%;  
-                
-                              
-}            
-button[type=submit]
-{
-    background-color: #0824F9;
-    color: white;                
-    margin: 4px 0;
-    border: none;
-    cursor: pointer;
-    width: 30%;   
-    position: relative;
-    left:40%;
-    border-radius: 5px;
-    text-align: center; line-height: 0px;
-    font-size: x-small;
-    
-}
-button[type=register]
-{
-    background-color: #1D2EAD;
-    color: white;                
-    margin: 4px 0;
-    border: none;
-    cursor: pointer;
-    width: 20%;   
-    position: relative;
-    left:40%;
-    border-radius: 5px;
-    text-align: center; line-height: 0px;
-    font-size: x-small;
-    
-}
-.Model
-{   
-    text-align: center;               
-    
-}            
-.Model button
-{                   
-    padding: 2% ;
-    margin: 1%;
-    width: 50px;
-    height:   50px;                
-    border-radius: 20%; 
-    background-color:#292929;
+    height: 30px;
 
 }
-.Gems
-{
-    text-align: center;  
+input[type=submit]{
+    height: 30px;    
+    font-size: xx-small;
+    
+
 }
-.Gems button
+#Register1
 {
-    background-color:transparent;
-    border:none;
+    width: 49%;    
+    left:0%
 }
-.Metal 
-{
-    text-align: center;  
-}
-button:hover {
-    opacity: 0.8;
+#Login1
+{    
+    width:49%;
+    left:0%   
 }
 }

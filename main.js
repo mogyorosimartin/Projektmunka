@@ -4,6 +4,70 @@ const canvas = document.getElementById('renderCanvas');
 const engine = new BABYLON.Engine(canvas, true);
 var container = [];
 
+const scene=new BABYLON.Scene(engine);    
+scene.ambientColor  = BABYLON.Color3.White();  
+var current="ring1";
+var currentcolors=[new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647),new BABYLON.Color3.White()] 
+
+window.onload = function(){ 
+	setHiddenInputValues();
+	document.getElementById('button').onclick=function(){
+        createRing(scene,"ring1",currentcolors[0],currentcolors[1]); 
+        current="ring1";      
+		setHiddenInputValues();		
+    };  
+    document.getElementById('button1').onclick=function(){
+        createRing(scene,"ring2",currentcolors[0],currentcolors[1]); 
+        current="ring2";       
+		setHiddenInputValues();
+    };  
+    document.getElementById('button2').onclick=function(){      
+       currentcolors[0]= new BABYLON.Color3(0.74901960784,0.60784313725,0.18823529411);   
+       createRing(scene,current,currentcolors[0],currentcolors[1]);   
+	   setHiddenInputValues();
+    };  
+    document.getElementById('button3').onclick=function(){
+        currentcolors[0]=new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647)
+        createRing(scene,current,currentcolors[0],currentcolors[1]);   
+		setHiddenInputValues();		
+     };
+    document.getElementById('button7').onclick=function(){
+        currentcolors[0]=new BABYLON.Color3(0.7176,0.4314,0.4745)
+        createRing(scene,current,currentcolors[0],currentcolors[1]); 
+		setHiddenInputValues();
+    };
+    document.getElementById('button4').onclick=function(){
+        currentcolors[1]=new BABYLON.Color3.Red()
+        createRing(scene,current,currentcolors[0],currentcolors[1]);
+		setHiddenInputValues();
+    };
+    document.getElementById('button5').onclick=function(){
+        currentcolors[1]=new BABYLON.Color3.Blue()
+        createRing(scene,current,currentcolors[0],currentcolors[1]); 
+		setHiddenInputValues();
+     };
+    document.getElementById('button6').onclick=function(){
+        currentcolors[1]=new BABYLON.Color3.White()
+        createRing(scene,current,currentcolors[0],currentcolors[1]);   
+		setHiddenInputValues();
+    };
+    document.getElementById('button8').onclick=function(){
+        currentcolors[1]=new BABYLON.Color3.FromHexString("#50C878");
+        createRing(scene,current,currentcolors[0],currentcolors[1]);   
+		setHiddenInputValues();
+     };
+};
+
+function setHiddenInputValues()
+{
+	document.getElementById('model').value=current;
+	document.getElementById('color1r').value=currentcolors[0].r;
+	document.getElementById('color1g').value=currentcolors[0].g;
+	document.getElementById('color1b').value=currentcolors[0].b;
+	document.getElementById('color2r').value=currentcolors[1].r;
+	document.getElementById('color2g').value=currentcolors[1].g;
+	document.getElementById('color2b').value=currentcolors[1].b;
+}
 
 function createCamera(scene){
     const camera = new BABYLON.ArcRotateCamera('camera',0,0,0,new BABYLON.Vector3.Zero,scene);
@@ -39,13 +103,13 @@ function createRing(scene,ringmodel,color1,color2){
             if(mesh.material.id=="Gem_1" ||mesh.material.id=="Gem_2")
             {
                 //mesh.materials[0].pbrMetallicRoughness.baseColorFactor[0]=0;
-                console.log(mesh.material);
+                //console.log(mesh.material);
                 mesh.material._albedoColor.r=color2.r;
-                console.log(color2.r);
+                //console.log(color2.r);
                 mesh.material._albedoColor.g=color2.g;
-                console.log(color2.g);
+                //console.log(color2.g);
                 mesh.material._albedoColor.b=color2.b;
-                console.log(color2.b);
+                //console.log(color2.b);
 
             }
             }
@@ -54,13 +118,13 @@ function createRing(scene,ringmodel,color1,color2){
                 if(mesh.material.id=="Metal_1" ||mesh.material.id=="Metal_2")
                 {
                     //mesh.materials[0].pbrMetallicRoughness.baseColorFactor[0]=0;
-                    console.log(mesh.material);
+                    //console.log(mesh.material);
                     mesh.material._albedoColor.r=color1.r;
-                    console.log(color1.r);
+                    //console.log(color1.r);
                     mesh.material._albedoColor.g=color1.g;
-                    console.log(color1.g);
+                    //console.log(color1.g);
                     mesh.material._albedoColor.b=color1.b;
-                    console.log(color1.b);
+                    //console.log(color1.b);
 
                 }
                 }
@@ -88,54 +152,13 @@ function createSkybox(scene)
     
 }
 function createScene()
- {
-     
-    const scene=new BABYLON.Scene(engine);    
-    scene.ambientColor  = BABYLON.Color3.White();  
-    var container = new BABYLON.AssetContainer(scene); 
-    var current="ring1";
-    var currentcolors=[new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647),new BABYLON.Color3.White()] 
+{
+	var container = new BABYLON.AssetContainer(scene); 
     createCamera();
     createLight(scene);   
     createRing(scene,current); 
     createSkybox(scene);    
-    document.getElementById('button').onclick=function(){
-        createRing(scene,"ring1"); 
-        current="ring1";       
-    };  
-    document.getElementById('button1').onclick=function(){
-        createRing(scene,"ring2"); 
-        current="ring2";       
-    };  
-    document.getElementById('button2').onclick=function(){      
-       currentcolors[0]= new BABYLON.Color3(0.74901960784,0.60784313725,0.18823529411);   
-       createRing(scene,current,currentcolors[0],currentcolors[1]);   
-    };  
-    document.getElementById('button3').onclick=function(){
-        currentcolors[0]=new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647)
-        createRing(scene,current,currentcolors[0],currentcolors[1]);       
-     };
-     document.getElementById('button7').onclick=function(){
-        currentcolors[0]=new BABYLON.Color3(0.7176,0.4314,0.4745)
-        createRing(scene,current,currentcolors[0],currentcolors[1]);       
-     };
-     document.getElementById('button4').onclick=function(){
-        currentcolors[1]=new BABYLON.Color3.Red()
-        createRing(scene,current,currentcolors[0],currentcolors[1]);
-
-     };
-     document.getElementById('button5').onclick=function(){
-        currentcolors[1]=new BABYLON.Color3.Blue()
-        createRing(scene,current,currentcolors[0],currentcolors[1]);       
-     };
-     document.getElementById('button6').onclick=function(){
-        currentcolors[1]=new BABYLON.Color3.White()
-        createRing(scene,current,currentcolors[0],currentcolors[1]);      
-     };
-     document.getElementById('button8').onclick=function(){
-        currentcolors[1]=new BABYLON.Color3.FromHexString("#50C878");
-        createRing(scene,current,currentcolors[0],currentcolors[1]);      
-     };
+    
     scene.createDefaultEnvironment();
     scene.environmentTexture=new BABYLON.HDRCubeTexture("assets/skybox/parking.hdr",scene,128, false, true, false, true);    
     return scene;

@@ -16,18 +16,60 @@
     <script type="application/javascript" src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
     <script type="application/javascript" src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
     <script type="application/javascript" src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script> 
-    <script src="main.js" type="module"></script>
+    <script src="main.js" type="application/javascript"></script>
     <div class="UI">
-        <div class="login"><form id="form1" runat="server">
-            <div>
-                Welcome
-                <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
-                <br />
-                <br />
+        <div class="login">
+            <div><form id="formSave" runat="server" action="Home.aspx">
+                <h1>Üdvözöllek 
+                <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" /></h1>
                 <asp:Label ID="lblLastLoginDate" runat="server" />
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <br />
+                <hr />
+                <h1>Ékszer mentése</h1>
+                <asp:Label ID="FailureSave" Text="" runat="server"></asp:Label><br />
+                <asp:TextBox ID="TextBox_JewName" placeholder="Mentés neve" runat="server"></asp:TextBox> <br />
+                <asp:HiddenField id="color1r" runat="server" value="1"/>
+                <asp:HiddenField id="color1g" runat="server" value="1"/>
+                <asp:HiddenField id="color1b" runat="server" value="1"/>
+                <asp:HiddenField id="color2r" runat="server" value="1"/>
+                <asp:HiddenField id="color2g" runat="server" value="1"/>
+                <asp:HiddenField id="color2b" runat="server" value="1"/>
+                <asp:HiddenField id="model" runat="server" value="1"/>
+                <asp:Button ID="Save" runat="server" Text="Jelenlegi ékszer mentése" OnClick="Save_Click"/><br /> 
+                <hr />
+                <h1>Mentett ékszerek</h1>
+                <asp:Label ID="Failure" Text="" runat="server"></asp:Label><br />
+                <asp:GridView ID="GridView1" OnSorting="SortRecords" runat="server"
+                     AllowSorting="True" DataKeyNames="id" 
+                     AllowPaging="True" OnPageIndexChanging="PaginateGridView" 
+                     PageSize="5" PagerSettings-Mode="Numeric"
+                     EnablePersistedSelection="True" AutoGenerateColumns="False">
+                 <Columns>
+                     <asp:TemplateField HeaderText="id" SortExpression="id">
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("id") %>'></asp:Label>
+                        </ItemTemplate>
+                     </asp:TemplateField>
+                     <asp:TemplateField HeaderText="Neve" SortExpression="name">
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("name") %>'></asp:Label>
+                        </ItemTemplate>
+                     </asp:TemplateField>
+                     <asp:TemplateField HeaderText="Betöltés">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="HyperLink1" Text="Betöltés" runat="server" NavigateUrl='<%#String.Format("javascript:createRing(scene,\"{0}\",new BABYLON.Color3({1},{2},{3}),new BABYLON.Color3({4},{5},{6}));", Eval("model"), (Eval("color1-r").ToString()).Replace(",","."), (Eval("color1-g").ToString()).Replace(",","."), (Eval("color1-b").ToString()).Replace(",","."), (Eval("color2-r").ToString()).Replace(",","."), (Eval("color2-g").ToString()).Replace(",","."), (Eval("color2-b").ToString()).Replace(",","."))%>'></asp:HyperLink>
+                        </ItemTemplate>
+                     </asp:TemplateField>
+                     <asp:TemplateField HeaderText="Törlés">
+                        <ItemTemplate>
+                            <asp:HyperLink ID="HyperLink2" Text="Törlés" runat="server" NavigateUrl='<%#String.Format("Home.aspx?deleteID={0}", Eval("id"))%>'></asp:HyperLink>
+                        </ItemTemplate>
+                     </asp:TemplateField>
+                 </Columns>
+             </asp:GridView></form>
             </div>
-            </form>
+            
         </div>
                   
         <div class="Rings">

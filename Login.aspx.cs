@@ -15,58 +15,65 @@ namespace User_Login_CS
     {
         protected void ValidateUser(object sender, EventArgs e)
         {
-            int userId = 0;
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
+            if (TextBox_UserName.Text != "" && TextBox_Password.Text != "")
             {
-                using (SqlCommand cmd = new SqlCommand("dbo.Validate_User"))
+                int userId = 0;
+                string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Username", TextBox_UserName.Text);
-                    cmd.Parameters.AddWithValue("@Password", TextBox_Password.Text);
-                    cmd.Connection = con;
-                    con.Open();
-                    userId = Convert.ToInt32(cmd.ExecuteScalar());
-                    con.Close();
-                }
-                switch (userId)
-                {
-                    case -1:
-                        Failure.Text = "Username and/or password is incorrect.";
-                        break;
-                    default:
-                        FormsAuthentication.RedirectFromLoginPage(TextBox_UserName.Text, true);
-                        break;
+                    using (SqlCommand cmd = new SqlCommand("dbo.Validate_User"))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Username", TextBox_UserName.Text);
+                        cmd.Parameters.AddWithValue("@Password", TextBox_Password.Text);
+                        cmd.Connection = con;
+                        con.Open();
+                        userId = Convert.ToInt32(cmd.ExecuteScalar());
+                        con.Close();
+                    }
+                    switch (userId)
+                    {
+                        case -1:
+                            Failure.Text = "Felhasználó és/vagy jelszó hibás.";
+                            break;
+                        default:
+                            FormsAuthentication.RedirectFromLoginPage(TextBox_UserName.Text, true);
+                            break;
+                    }
                 }
             }
+            else Failure.Text = "Nem adtál meg felhasználót és/vagy jelszót.";
         }
 
         protected void InsertUser(object sender, EventArgs e)
         {
-            int userId = 0;
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
+            if (TextBox_UserName.Text != "" && TextBox_Password.Text != "")
             {
-                using (SqlCommand cmd = new SqlCommand("dbo.Insert_User"))
+                int userId = 0;
+                string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Username", TextBox_UserName.Text);
-                    cmd.Parameters.AddWithValue("@Password", TextBox_Password.Text);
-                    cmd.Connection = con;
-                    con.Open();
-                    userId = Convert.ToInt32(cmd.ExecuteScalar());
-                    con.Close();
+                    using (SqlCommand cmd = new SqlCommand("dbo.Insert_User"))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Username", TextBox_UserName.Text);
+                        cmd.Parameters.AddWithValue("@Password", TextBox_Password.Text);
+                        cmd.Connection = con;
+                        con.Open();
+                        userId = Convert.ToInt32(cmd.ExecuteScalar());
+                        con.Close();
+                    }
+                    switch (userId)
+                    {
+                        case -1:
+                            Failure.Text = "Felhasználó már létezik ilyen névvel.";
+                            break;
+                        default:
+                            Failure.Text = "Felhasználó elkészült.";
+                            break;
+                    }
                 }
-                switch (userId)
-                {
-                    case -1:
-                        Failure.Text = "Username already exists.";
-                        break;
-                    default:
-                        Failure.Text = "Account created.";
-                        break;
-                }
-            }
+            } else Failure.Text = "Nem adtál meg felhasználót és/vagy jelszót.";
         }
 
         protected void Login1_Click(object sender, EventArgs e)

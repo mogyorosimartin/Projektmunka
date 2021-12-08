@@ -28,9 +28,9 @@
                 </div>
                 <div id="UI1">
                 <br />
-                <h1>Ékszer mentése</h1>
-                <asp:Label ID="FailureSave" Text="" runat="server"></asp:Label><br />
+                <h1>Ékszer mentése</h1>                
                 <asp:TextBox ID="TextBox_JewName" placeholder="Mentés neve" runat="server"></asp:TextBox> <br />
+                <asp:Label ID="FailureSave" Text="" runat="server"></asp:Label>
                 <asp:HiddenField id="color1r" runat="server" value="1"/>
                 <asp:HiddenField id="color1g" runat="server" value="1"/>
                 <asp:HiddenField id="color1b" runat="server" value="1"/>
@@ -38,11 +38,11 @@
                 <asp:HiddenField id="color2g" runat="server" value="1"/>
                 <asp:HiddenField id="color2b" runat="server" value="1"/>
                 <asp:HiddenField id="model" runat="server" value="1"/>
-                <asp:Button ID="Save" runat="server" Text="Jelenlegi ékszer mentése" OnClick="Save_Click"/><br /> 
-                <br />
+                <asp:Button ID="Save" runat="server" Text="Jelenlegi ékszer mentése" OnClick="Save_Click"/><br />                 
                 <h1>Mentett ékszerek</h1>
                 <asp:Label ID="Failure" Text="" runat="server"></asp:Label><br />
                 </div>
+                <div id="Table1">
                 <asp:GridView ID="GridView1" OnSorting="SortRecords" runat="server"
                      AllowSorting="True" DataKeyNames="id" 
                      AllowPaging="True" OnPageIndexChanging="PaginateGridView" 
@@ -65,7 +65,9 @@
                         </ItemTemplate>
                      </asp:TemplateField>
                  </Columns>
-             </asp:GridView></form>             
+             </asp:GridView>
+               </div>
+            </form>             
             </div>
             
         </div>
@@ -76,7 +78,7 @@
             </div>
                 <div class="Model">
                 <button id="button" type="button"> <img src="assets/rings/RING1/RING1.png" width="100%" height="100%" alt="RING1" /></button>
-                <button id="button1" type="button"><img src="assets/rings/RING2/RING2.png" width="100%" height="100%" alt="RING2"/></button>
+                <button id="button1" type="button"><img src="assets/rings/RING2/RING2.png" width="100%" height="100%" alt="RING2"/></button>              
             </div>
             <div class="Metal">
                 <div class="Labels">

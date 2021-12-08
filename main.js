@@ -20,7 +20,7 @@ window.onload = function(){
         createRing(scene,"ring2",currentcolors[0],currentcolors[1]); 
         current="ring2";       
 		setHiddenInputValues();
-    };  
+    };     
     document.getElementById('button2').onclick=function(){      
        currentcolors[0]= new BABYLON.Color3(0.74901960784,0.60784313725,0.18823529411);   
        createRing(scene,current,currentcolors[0],currentcolors[1]);   

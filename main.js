@@ -7,11 +7,12 @@ var container = [];
 const scene=new BABYLON.Scene(engine);    
 scene.ambientColor  = BABYLON.Color3.White();  
 var current="ring1";
-var currentcolors=[new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647),new BABYLON.Color3.White()] 
+var currentcolor0 = new BABYLON.Color3(0.75294117647,0.75294117647,0.75294117647);;
+var currentcolor1 = new BABYLON.Color3(1,1,1);;
 
 window.onload = function(){ 
 	setHiddenInputValues();
-	document.getElementById('button').onclick=function(){
+	/*document.getElementById('button').onclick=function(){
         createRing(scene,"ring1",currentcolors[0],currentcolors[1]); 
         current="ring1";      
 		setHiddenInputValues();		
@@ -55,18 +56,18 @@ window.onload = function(){
         currentcolors[1]=new BABYLON.Color3.FromHexString("#50C878");
         createRing(scene,current,currentcolors[0],currentcolors[1]);   
 		setHiddenInputValues();
-     };
+     };*/
 };
 
 function setHiddenInputValues()
 {
 	document.getElementById('model').value=current;
-	document.getElementById('color1r').value=currentcolors[0].r;
-	document.getElementById('color1g').value=currentcolors[0].g;
-	document.getElementById('color1b').value=currentcolors[0].b;
-	document.getElementById('color2r').value=currentcolors[1].r;
-	document.getElementById('color2g').value=currentcolors[1].g;
-	document.getElementById('color2b').value=currentcolors[1].b;
+	document.getElementById('color1r').value=currentcolor0.r;
+	document.getElementById('color1g').value=currentcolor0.g;
+	document.getElementById('color1b').value=currentcolor0.b;
+	document.getElementById('color2r').value=currentcolor1.r;
+	document.getElementById('color2g').value=currentcolor1.g;
+	document.getElementById('color2b').value=currentcolor1.b;
 }
 
 function createCamera(scene){
@@ -94,7 +95,12 @@ function createRing(scene,ringmodel,color1,color2){
             mesh.dispose();           
             container=[];
         })
-    }    
+    }
+	if(ringmodel == "") ringmodel = current; else current=ringmodel;
+	if(color1 == "-1") color1 = currentcolor0; else currentcolor0 = color1;
+	if(color2 == "-1") color2 = currentcolor1; else currentcolor1 = color2;
+	console.log(color2);
+	console.log(currentcolor1);
     BABYLON.SceneLoader.ImportMesh(null,`assets/rings/${ringmodel}/`,'scene.GLTF',scene, (meshes)=>{
        // console.log(meshes); 
         meshes.forEach((mesh)=>{
@@ -157,7 +163,7 @@ function createScene()
 	var container = new BABYLON.AssetContainer(scene); 
     createCamera();
     createLight(scene);   
-    createRing(scene,current); 
+    createRing(scene,current,"-1","-1"); 
     createSkybox(scene);    
     
     scene.createDefaultEnvironment();

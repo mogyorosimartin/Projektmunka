@@ -17,9 +17,9 @@
     <script type="application/javascript" src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
     <script type="application/javascript" src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script> 
     <script src="main.js" type="application/javascript"></script>
-    <div class="UI">
+    <div class="UI"><form id="formSave" runat="server" action="Home.aspx">
         <div class="login">
-            <div><form id="formSave" runat="server" action="Home.aspx">
+            <div>
                 <div id="LoginID1">
                 <h1>Üdvözöllek 
                 <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" /></h1>
@@ -66,8 +66,7 @@
                      </asp:TemplateField>
                  </Columns>
              </asp:GridView>
-               </div>
-            </form>             
+               </div> 
             </div>
             
         </div>
@@ -77,27 +76,113 @@
             <label>Gyűrűk</label> 
             </div>
                 <div class="Model">
-                <button id="button" type="button"> <img src="assets/rings/RING1/RING1.png" width="100%" height="100%" alt="RING1" /></button>
-                <button id="button1" type="button"><img src="assets/rings/RING2/RING2.png" width="100%" height="100%" alt="RING2"/></button>              
-            </div>
+                    <asp:Label ID="ModelList"  runat="server" Text=""></asp:Label>           
+                </div>
             <div class="Metal">
                 <div class="Labels">
                 <label>Fémek</label><br />
                 </div>
-                <button id="button2" type="button" style="background-color: goldenrod;"></button>
-                <button id="button7" type="button" style="background-color: rosybrown;"></button>
-                <button id="button3" type="button" style="background-color: silver;"></button>
+                <asp:Label ID="MetalList"  runat="server" Text=""></asp:Label>
             </div>
             <div class="Gems" >
                 <div class="Labels">
                 <label>Drágakövek</label><br />
                 </div>
-                <button id="button4" type="button" style="background-image: url(assets/rings/gems/RED.png); background-size:cover;"></button>
-                <button id="button5" type="button" style="background-image: url(assets/rings/gems/BLUE.png); background-size:cover;"></button>
-                <button id="button6" type="button" style="background-image: url(assets/rings/gems/White.png); background-size:cover;"></button> 
-                <button id="button8" type="button" style="background-image: url(assets/rings/gems/Green.png); background-size:cover;"></button>                
+                <asp:Label ID="GemList"  runat="server" Text=""></asp:Label>           
             </div>
         </div>
+
+         <% if (Is_User_Admin() == true) { %>
+            <div class="login">
+                <h1>Admin</h1>
+                <h3>Model hozzáadás</h3>                
+                <asp:TextBox ID="TextBox_ModelName" placeholder="Modelnév (assets/rings/*ez*/)" runat="server"></asp:TextBox> <br />
+                <asp:TextBox ID="TextBox_ModelImg" placeholder="Model kép útvonal" runat="server"></asp:TextBox> <br />
+                <asp:Label ID="Model_Resp" Text="" runat="server"></asp:Label>
+                <asp:Button ID="Model_Add" runat="server" Text="Hozzáadás" OnClick="Model_Add_Click"/><br />    
+                <h3>Drágakő/Fém hozzáadás</h3>                
+                <asp:TextBox ID="TextBox_DFColorr" placeholder="Babylon Red(0-1)" runat="server"></asp:TextBox> <br />
+                <asp:TextBox ID="TextBox_DFColorg" placeholder="Babylon Green(0-1)" runat="server"></asp:TextBox> <br />
+                <asp:TextBox ID="TextBox_DFColorb" placeholder="Babylon Blue(0-1)" runat="server"></asp:TextBox> <br />
+                <asp:TextBox ID="TextBox_DFHexcolor" placeholder="Hexcolor #XXXXXX" runat="server"></asp:TextBox> <br />
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem Text ="Drágakő" Value ="1"></asp:ListItem> 
+                    <asp:ListItem Text ="Fém" Value ="2"></asp:ListItem> 
+                </asp:DropDownList><br />
+                <asp:Label ID="GemMat_Resp" Text="" runat="server"></asp:Label>
+                <asp:Button ID="GemMat_Add" runat="server" Text="Hozzáadás" OnClick="GemMat_Add_Click"/><br />  
+                <h3>Modellek</h3>
+                <asp:Label ID="Model_Del" Text="" runat="server"></asp:Label><br />
+                
+                <div id="Table1">
+                    <asp:GridView ID="GridView2" OnSorting="SortRecords_Models" runat="server"
+                         AllowSorting="True" DataKeyNames="id" 
+                         AllowPaging="True" OnPageIndexChanging="PaginateGridView_Models" 
+                         PageSize="5" PagerSettings-Mode="Numeric"
+                         EnablePersistedSelection="True" AutoGenerateColumns="False">
+                         <Columns >
+                             <asp:TemplateField HeaderText="Neve" SortExpression="name">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label2"  runat="server" Text='<%# Bind("name") %>'></asp:Label>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                             <asp:TemplateField HeaderText="Törlés">
+                                <ItemTemplate>
+                                    <asp:HyperLink ID="HyperLink2" CssClass="HyperLink2" Text="X" runat="server" NavigateUrl='<%#String.Format("Home.aspx?deleteID_Model={0}", Eval("id"))%>'></asp:HyperLink>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                    </asp:GridView>
+                </div>
+                <h3>Fémek</h3>
+                <asp:Label ID="Mat_Del" Text="" runat="server"></asp:Label><br />
+                
+                <div id="Table1">
+                    <asp:GridView ID="GridView3" OnSorting="SortRecords_Mat" runat="server"
+                         AllowSorting="True" DataKeyNames="id" 
+                         AllowPaging="True" OnPageIndexChanging="PaginateGridView_Mat" 
+                         PageSize="5" PagerSettings-Mode="Numeric"
+                         EnablePersistedSelection="True" AutoGenerateColumns="False">
+                         <Columns >
+                             <asp:TemplateField HeaderText="Hex" SortExpression="hexcolor">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label2"  runat="server" Text='<%# Bind("hexcolor") %>'></asp:Label>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                             <asp:TemplateField HeaderText="Törlés">
+                                <ItemTemplate>
+                                    <asp:HyperLink ID="HyperLink2" CssClass="HyperLink2" Text="X" runat="server" NavigateUrl='<%#String.Format("Home.aspx?deleteID_Mat={0}", Eval("id"))%>'></asp:HyperLink>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                    </asp:GridView>
+                </div>
+                <h3>Drágakövek</h3>
+                <asp:Label ID="Gem_Del" Text="" runat="server"></asp:Label><br />
+                
+                <div id="Table1">
+                    <asp:GridView ID="GridView4" OnSorting="SortRecords_Gem" runat="server"
+                         AllowSorting="True" DataKeyNames="id" 
+                         AllowPaging="True" OnPageIndexChanging="PaginateGridView_Gem" 
+                         PageSize="5" PagerSettings-Mode="Numeric"
+                         EnablePersistedSelection="True" AutoGenerateColumns="False">
+                         <Columns >
+                             <asp:TemplateField HeaderText="Hex" SortExpression="hexcolor">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label2"  runat="server" Text='<%# Bind("hexcolor") %>'></asp:Label>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                             <asp:TemplateField HeaderText="Törlés">
+                                <ItemTemplate>
+                                    <asp:HyperLink ID="HyperLink2" CssClass="HyperLink2" Text="X" runat="server" NavigateUrl='<%#String.Format("Home.aspx?deleteID_Gem={0}", Eval("id"))%>'></asp:HyperLink>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                         </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+         <% } %>
+        </form> 
     </div>
 </body>
 </html>

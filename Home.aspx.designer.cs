@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace User_Login_CS {
-    
-    
-    public partial class Home {
-        
+namespace User_Login_CS
+{
+
+
+    public partial class Home
+    {
+
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// formSave control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm formSave;
-        
+
         /// <summary>
         /// LoginName1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginName LoginName1;
-        
+
         /// <summary>
         /// lblLastLoginDate control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLastLoginDate;
-        
+
         /// <summary>
         /// LoginStatus1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginStatus LoginStatus1;
-        
+
         /// <summary>
         /// TextBox_JewName control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_JewName;
-        
+
         /// <summary>
         /// FailureSave control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label FailureSave;
-        
+
         /// <summary>
         /// color1r control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField color1r;
-        
+
         /// <summary>
         /// color1g control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField color1g;
-        
+
         /// <summary>
         /// color1b control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField color1b;
-        
+
         /// <summary>
         /// color2r control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField color2r;
-        
+
         /// <summary>
         /// color2g control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField color2g;
-        
+
         /// <summary>
         /// color2b control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField color2b;
-        
+
         /// <summary>
         /// model control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField model;
-        
+
         /// <summary>
         /// Save control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Save;
-        
+
         /// <summary>
         /// Failure control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Failure;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
+
         /// <summary>
         /// ModelList control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ModelList;
-        
+
         /// <summary>
         /// MetalList control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MetalList;
-        
+
         /// <summary>
         /// GemList control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label GemList;
-        
+
         /// <summary>
         /// TextBox_ModelName control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_ModelName;
-        
+
         /// <summary>
         /// TextBox_ModelImg control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_ModelImg;
-        
+
         /// <summary>
         /// Model_Resp control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Model_Resp;
-        
+
         /// <summary>
         /// Model_Add control.
         /// </summary>
@@ -227,34 +229,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Model_Add;
-        
-        /// <summary>
-        /// TextBox_DFColorr control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_DFColorr;
-        
-        /// <summary>
-        /// TextBox_DFColorg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_DFColorg;
-        
-        /// <summary>
-        /// TextBox_DFColorb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_DFColorb;
-        
+
         /// <summary>
         /// TextBox_DFHexcolor control.
         /// </summary>
@@ -263,7 +238,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_DFHexcolor;
-        
+
         /// <summary>
         /// DropDownList1 control.
         /// </summary>
@@ -272,7 +247,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
+
         /// <summary>
         /// GemMat_Resp control.
         /// </summary>
@@ -281,7 +256,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label GemMat_Resp;
-        
+
         /// <summary>
         /// GemMat_Add control.
         /// </summary>
@@ -290,7 +265,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button GemMat_Add;
-        
+
         /// <summary>
         /// Model_Del control.
         /// </summary>
@@ -299,7 +274,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Model_Del;
-        
+
         /// <summary>
         /// GridView2 control.
         /// </summary>
@@ -308,7 +283,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView2;
-        
+
         /// <summary>
         /// Mat_Del control.
         /// </summary>
@@ -317,7 +292,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Mat_Del;
-        
+
         /// <summary>
         /// GridView3 control.
         /// </summary>
@@ -326,7 +301,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView3;
-        
+
         /// <summary>
         /// Gem_Del control.
         /// </summary>
@@ -335,7 +310,7 @@ namespace User_Login_CS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Gem_Del;
-        
+
         /// <summary>
         /// GridView4 control.
         /// </summary>

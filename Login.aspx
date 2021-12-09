@@ -46,10 +46,10 @@
                 <div class="Labels">
                 <label>Drágakövek</label><br />
                 </div>
-                <button id="button4" type="button" style="background-image: url(assets/rings/gems/RED.png); background-size:cover;"></button>
-                <button id="button5" type="button" style="background-image: url(assets/rings/gems/BLUE.png); background-size:cover;"></button>
-                <button id="button6" type="button" style="background-image: url(assets/rings/gems/White.png); background-size:cover;"></button> 
-                <button id="button8" type="button" style="background-image: url(assets/rings/gems/Green.png); background-size:cover;"></button>                
+                <button id="button4" type="button" style="background-color:red; background-size:cover;"></button>
+                <button id="button5" type="button" style="background-color:blue; background-size:cover;"></button>
+                <button id="button6" type="button" style="background-color:white; background-size:cover;"></button> 
+                <button id="button8" type="button" style="background-color:green; background-size:cover;"></button>                
             </div>
         </div>
     </div>

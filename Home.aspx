@@ -93,17 +93,14 @@
         </div>
 
          <% if (Is_User_Admin() == true) { %>
-            <div class="login">
+            <div class="Adminlogin">
                 <h1>Admin</h1>
                 <h3>Model hozzáadás</h3>                
                 <asp:TextBox ID="TextBox_ModelName" placeholder="Modelnév (assets/rings/*ez*/)" runat="server"></asp:TextBox> <br />
                 <asp:TextBox ID="TextBox_ModelImg" placeholder="Model kép útvonal" runat="server"></asp:TextBox> <br />
                 <asp:Label ID="Model_Resp" Text="" runat="server"></asp:Label>
                 <asp:Button ID="Model_Add" runat="server" Text="Hozzáadás" OnClick="Model_Add_Click"/><br />    
-                <h3>Drágakő/Fém hozzáadás</h3>                
-                <asp:TextBox ID="TextBox_DFColorr" placeholder="Babylon Red(0-1)" runat="server"></asp:TextBox> <br />
-                <asp:TextBox ID="TextBox_DFColorg" placeholder="Babylon Green(0-1)" runat="server"></asp:TextBox> <br />
-                <asp:TextBox ID="TextBox_DFColorb" placeholder="Babylon Blue(0-1)" runat="server"></asp:TextBox> <br />
+                <h3>Drágakő/Fém hozzáadás</h3>
                 <asp:TextBox ID="TextBox_DFHexcolor" placeholder="Hexcolor #XXXXXX" runat="server"></asp:TextBox> <br />
                 <asp:DropDownList ID="DropDownList1" runat="server">
                     <asp:ListItem Text ="Drágakő" Value ="1"></asp:ListItem> 

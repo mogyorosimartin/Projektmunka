@@ -43,6 +43,7 @@ html, body {
 }
 span {
     color: white;  
+    
 }                      
 input[type=text], input[type=password] {
     padding: 5px;
@@ -58,7 +59,7 @@ input[type=text], input[type=password] {
     filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))              
 }
 button {
-    background-color: #F17300;
+    
     color: white;
     padding: 2% ;
     margin: 8px;
@@ -113,7 +114,7 @@ input[type=submit] {
     text-align: center; line-height: 0px;
     
 }
-#GridView1
+#GridView1,#GridView2,#GridView3,#GridView4
 {
     background-color: rgba(5, 74,145,0.2);
     text-align: center;
@@ -124,19 +125,19 @@ input[type=submit] {
     overflow: hidden;
     border-color:rgba(40, 84, 122, 0.8);     
     box-shadow:  2px 3px 5px rgb(24, 23, 23);
+    width: 60%;
     
 }
-#GridView1 a
+#GridView1 a,#GridView2 a,#GridView3 a,#GridView4 a
 { 
-       text-decoration: none;
-      
+       text-decoration: none;    
        
 }
 th a
 {
     color:white;   
 }
-#GridView1 td, th
+#GridView1 td, th,#GridView2 td,#GridView2 th,#GridView3 td,#GridView3 th,#GridView4 td,#GridView4 th
 {
     padding: 10px; 
     
@@ -172,7 +173,9 @@ a.HyperLink2
     cursor: pointer;
     width: 50%;   
     position: relative;
-    left:25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
     text-align: center; line-height: 0px;
     font-size: medium;
@@ -196,12 +199,6 @@ a.HyperLink2
 .Gems
 {
     text-align: center;      
-    
-}
-.Gems button
-{
-    background-color:transparent;
-    border:none;
     
 }
 .Metal 
@@ -237,6 +234,7 @@ h1{
     
     display:table;
     margin:0 auto;
+    text-align: center;
     margin-top:10px;
     margin-bottom:10px;
     filter:drop-shadow(2px 3px 5px rgb(24, 23, 23));     
@@ -251,9 +249,62 @@ h1{
 }
 .Rings{
     padding-top: 2%;
+    padding-bottom: 2%;
+}
+.Adminlogin 
+{
+    background-color: #3E7CB1;   
+    padding-bottom: 5%; 
+}
+.Adminlogin h1
+{
+    text-align: center;
+}
+.Adminlogin h3
+{
+    text-align: center;
+    filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))
+}
+.Adminlogin input[type=submit]
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 30%;
+    border-radius: 3%;
+}
+.Adminlogin span
+{
+    text-align: center;
+    display: block;
+    filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))
+}
+.Adminlogin select
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #DBE4EE;
+    width: 20%;
+    filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))
 }
 @media only screen and (max-width: 1024px) 
 {
+.Model button{
+    width: 80px;
+    height:   80px;  
+    
+}
+input[type=text]
+{
+    font-size: small;
+}
+#GridView1,#GridView2,#GridView3,#GridView4
+{
+    Padding: 3px;
+    font-size: x-small;
+}
+
 canvas
 {
     width: 65%;
@@ -261,6 +312,11 @@ canvas
 .UI
 {
     width: 35%;
+}
+#Save
+{
+    font-size: x-small;
+    width: 60%;  
 }
 h1{
     font-size:large;

@@ -262,14 +262,15 @@ namespace User_Login_CS
             {
                 int RespId = 0;
                 string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+                System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml(TextBox_DFHexcolor.Text);
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     using (SqlCommand cmd = new SqlCommand("dbo.Insert_Gem"))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Colorr", TextBox_DFColorr.Text);
-                        cmd.Parameters.AddWithValue("@Colorg", TextBox_DFColorg.Text);
-                        cmd.Parameters.AddWithValue("@Colorb", TextBox_DFColorb.Text);
+                        cmd.CommandType = CommandType.StoredProcedure; 
+                        cmd.Parameters.AddWithValue("@Colorr", Convert.ToString((double)color.R / 255));
+                        cmd.Parameters.AddWithValue("@Colorg", Convert.ToString((double)color.G / 255));
+                        cmd.Parameters.AddWithValue("@Colorb", Convert.ToString((double)color.B / 255));
                         cmd.Parameters.AddWithValue("@Hexcolor", TextBox_DFHexcolor.Text);
                         cmd.Connection = con;
                         con.Open();
@@ -293,14 +294,15 @@ namespace User_Login_CS
             {
                 int RespId = 0;
                 string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+                System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml(TextBox_DFHexcolor.Text);
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     using (SqlCommand cmd = new SqlCommand("dbo.Insert_Mat"))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Colorr", TextBox_DFColorr.Text);
-                        cmd.Parameters.AddWithValue("@Colorg", TextBox_DFColorg.Text);
-                        cmd.Parameters.AddWithValue("@Colorb", TextBox_DFColorb.Text);
+                        cmd.Parameters.AddWithValue("@Colorr", Convert.ToString((double)color.R / 255));
+                        cmd.Parameters.AddWithValue("@Colorg", Convert.ToString((double)color.G / 255));
+                        cmd.Parameters.AddWithValue("@Colorb", Convert.ToString((double)color.B / 255));
                         cmd.Parameters.AddWithValue("@Hexcolor", TextBox_DFHexcolor.Text);
                         cmd.Connection = con;
                         con.Open();

@@ -135,33 +135,38 @@ namespace User_Login_CS
                     BindData_Mat();
                 }
 
-                DataTable ModelL = GetData_Models();
-                string mlist = "";
-                foreach (DataRow dtRow in ModelL.Rows)
-                {
-                    string js = String.Format("createRing(scene,\"{0}\",\"-1\",\"-1\");setHiddenInputValues();", dtRow[1].ToString());
-                    mlist += String.Format("<button type = 'button'> <img src = '{0}' width = '100%' height = '100%' alt = '{1}' onclick = '{2}'/></button>", dtRow[2].ToString(), dtRow[1].ToString(), js);
-                }
-                ModelList.Text = mlist;
-
-                DataTable MetalL = GetData_Mat();
-                string melist = "";
-                foreach (DataRow dtRow in MetalL.Rows)
-                {
-                    string js = String.Format("createRing(scene,\"\",new BABYLON.Color3({0},{1},{2}),\"-1\");setHiddenInputValues();", dtRow[1].ToString().Replace(",", "."), dtRow[2].ToString().Replace(",", "."), dtRow[3].ToString().Replace(",", "."));
-                    melist += String.Format("<button type='button' style='background-color:{0}; ' onclick='{1}'></button>", dtRow[4].ToString(), js);
-                }
-                MetalList.Text = melist;
-
-                DataTable GemL = GetData_Gem();
-                string glist = "";
-                foreach (DataRow dtRow in GemL.Rows)
-                {
-                    string js = String.Format("createRing(scene,\"\",\"-1\",new BABYLON.Color3({0},{1},{2}));setHiddenInputValues();", dtRow[1].ToString().Replace(",", "."), dtRow[2].ToString().Replace(",", "."), dtRow[3].ToString().Replace(",", "."));
-                    glist += String.Format("<button type='button' style='background-color:{0};background-size:cover;' onclick='{1}'></button>", dtRow[4].ToString(), js);
-                }
-                GemList.Text = glist;
+                ListRefresh();
             }
+        }
+
+        protected void ListRefresh()
+        {
+            DataTable ModelL = GetData_Models();
+            string mlist = "";
+            foreach (DataRow dtRow in ModelL.Rows)
+            {
+                string js = String.Format("createRing(scene,\"{0}\",\"-1\",\"-1\");setHiddenInputValues();", dtRow[1].ToString());
+                mlist += String.Format("<button type = 'button'> <img src = '{0}' width = '100%' height = '100%' alt = '{1}' onclick = '{2}'/></button>", dtRow[2].ToString(), dtRow[1].ToString(), js);
+            }
+            ModelList.Text = mlist;
+
+            DataTable MetalL = GetData_Mat();
+            string melist = "";
+            foreach (DataRow dtRow in MetalL.Rows)
+            {
+                string js = String.Format("createRing(scene,\"\",new BABYLON.Color3({0},{1},{2}),\"-1\");setHiddenInputValues();", dtRow[1].ToString().Replace(",", "."), dtRow[2].ToString().Replace(",", "."), dtRow[3].ToString().Replace(",", "."));
+                melist += String.Format("<button type='button' style='background-color:{0}; ' onclick='{1}'></button>", dtRow[4].ToString(), js);
+            }
+            MetalList.Text = melist;
+
+            DataTable GemL = GetData_Gem();
+            string glist = "";
+            foreach (DataRow dtRow in GemL.Rows)
+            {
+                string js = String.Format("createRing(scene,\"\",\"-1\",new BABYLON.Color3({0},{1},{2}));setHiddenInputValues();", dtRow[1].ToString().Replace(",", "."), dtRow[2].ToString().Replace(",", "."), dtRow[3].ToString().Replace(",", "."));
+                glist += String.Format("<button type='button' style='background-color:{0};background-size:cover;' onclick='{1}'></button>", dtRow[4].ToString(), js);
+            }
+            GemList.Text = glist;
         }
 
         protected bool Is_User_Admin()
@@ -248,6 +253,7 @@ namespace User_Login_CS
                             default:
                                 Model_Resp.Text = "Model hozzáadva.";
                                 BindData_Models();
+                                ListRefresh();
                                 break;
                         }
                     }
@@ -281,6 +287,7 @@ namespace User_Login_CS
                     {
                         default:
                             BindData_Gem();
+                            ListRefresh();
                             GemMat_Resp.Text = "Drágakő hozzáadva.";
                             break;
                     }
@@ -313,6 +320,7 @@ namespace User_Login_CS
                     {
                         default:
                             BindData_Mat();
+                            ListRefresh();
                             GemMat_Resp.Text = "Fém hozzáadva.";
                             break;
                     }

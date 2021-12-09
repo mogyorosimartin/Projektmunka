@@ -58,6 +58,19 @@ input[type=text], input[type=password] {
     border-radius: 10px;  
     filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))              
 }
+select {
+    padding: 5px;
+    width: 80%; 
+    height: 60px;  
+    font-size: x-large;                       
+    margin: 0px auto;                
+    display:block;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    position: relative;             
+    border-radius: 10px;  
+    filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))              
+}
 button {
     
     color: white;
@@ -285,7 +298,6 @@ h1{
     margin-right: auto;
     display: block;
     background-color: #DBE4EE;
-    width: 20%;
     filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))
 }
 @media only screen and (max-width: 1024px) 

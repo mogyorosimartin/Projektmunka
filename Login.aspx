@@ -16,7 +16,7 @@
     <script type="application/javascript" src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
     <script type="application/javascript" src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
     <script type="application/javascript" src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script> 
-    <script src="main.js" type="module"></script>
+    <script src="main.js" type="application/javascript"></script>
     <div class="UI">
         <div class="login"><form id="form1" runat="server">                               
                 <asp:TextBox ID="TextBox_UserName" placeholder="Felhasználó" runat="server"></asp:TextBox> <br />       
@@ -31,25 +31,19 @@
             <label>Gyűrűk</label> 
             </div>
                 <div class="Model">
-                <button id="button" type="button"> <img src="assets/rings/RING1/RING1.png" width="100%" height="100%" alt="RING1" /></button>
-                <button id="button1" type="button"><img src="assets/rings/RING2/RING2.png" width="100%" height="100%" alt="RING2"/></button>               
-            </div>
+                    <asp:Label ID="ModelList"  runat="server" Text=""></asp:Label>           
+                </div>
             <div class="Metal">
                 <div class="Labels">
                 <label>Fémek</label><br />
                 </div>
-                <button id="button2" type="button" style="background-color: goldenrod;"></button>
-                <button id="button7" type="button" style="background-color: rosybrown;"></button>
-                <button id="button3" type="button" style="background-color: silver;"></button>
+                <asp:Label ID="MetalList"  runat="server" Text=""></asp:Label>
             </div>
             <div class="Gems" >
                 <div class="Labels">
                 <label>Drágakövek</label><br />
                 </div>
-                <button id="button4" type="button" style="background-color:red; background-size:cover;"></button>
-                <button id="button5" type="button" style="background-color:blue; background-size:cover;"></button>
-                <button id="button6" type="button" style="background-color:white; background-size:cover;"></button> 
-                <button id="button8" type="button" style="background-color:green; background-size:cover;"></button>                
+                <asp:Label ID="GemList"  runat="server" Text=""></asp:Label>           
             </div>
         </div>
     </div>

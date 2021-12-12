@@ -12,6 +12,7 @@ html, body {
     color:white;
     
 }
+
 .Labels
 {
     margin-top: 0px;
@@ -141,10 +142,11 @@ input[type=submit] {
     width: 60%;
     
 }
+
 #GridView1 a,#GridView2 a,#GridView3 a,#GridView4 a
 { 
        text-decoration: none;    
-       
+       filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))
 }
 th a
 {
@@ -154,6 +156,37 @@ th a
 {
     padding: 10px; 
     
+}
+#GridView1 table,#GridView2 table,#GridView3 table,#GridView4 table
+{   
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.GridView  > tbody > tr > td > table > tbody > tr > td > a
+{
+    color:#ff9e44a2;
+    font-size: large;
+    font-weight: bold;
+
+}
+.GridView  > tbody > tr > td > table > tbody > tr > td > a:hover
+{
+    color:#ff5100;
+    font-size: large;
+    font-weight: bolder;
+
+}
+
+.GridView  > tbody > tr > td > table > tbody > tr > td > span
+{
+    color:#F17300;
+    font-size: large;
+    font-weight: bolder;
+    filter:drop-shadow(0px 0px 2px #F17300)
+
 }
 #UI1 h1
 {
@@ -171,11 +204,21 @@ a.HyperLink1
     -webkit-text-stroke: medium;
     
 }
+a.HyperLink1:hover
+{
+    font-weight: bolder;
+    filter:drop-shadow(0px 0px 10px rgb(40, 173, 0))
+}
 a.HyperLink2
 {
     font-size: x-large;
     color:red;
     -webkit-text-stroke: medium;
+}
+a.HyperLink2:hover
+{
+    font-weight: bolder;
+    filter:drop-shadow(0px 0px 10px red)
 }
 #Save
 {
@@ -223,7 +266,11 @@ a.HyperLink2
 {
     border-radius: 0%;
 }
+
 button:hover {
+    opacity: 0.8;
+}
+input:hover {
     opacity: 0.8;
 }
 h1{
@@ -257,8 +304,14 @@ h1{
 {
     color: darkgray;
     font-size: 20px;
-    filter:drop-shadow(2px 3px 5px rgb(24, 23, 23))
+    filter:drop-shadow(2px 3px 5px rgb(24, 23, 23));
+    text-decoration: none;
     
+}
+#LoginID1 a:hover
+{
+    color:red;    
+    filter:drop-shadow(0px 0px 5px rgb(255, 0, 0));
 }
 .Rings{
     padding-top: 2%;
@@ -311,7 +364,7 @@ input[type=text]
 {
     font-size: small;
 }
-#GridView1,#GridView2,#GridView3,#GridView4
+#GridView1,#GridView2,#GridView3,#GridView4 
 {
     Padding: 3px;
     font-size: x-small;

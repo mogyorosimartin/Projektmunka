@@ -43,7 +43,7 @@
                 <asp:Label ID="Failure" Text="" runat="server"></asp:Label><br />
                 </div>
                 <div id="Table1">
-                <asp:GridView ID="GridView1" OnSorting="SortRecords" runat="server"
+                <asp:GridView ID="GridView1" CssClass="GridView" OnSorting="SortRecords" runat="server"
                      AllowSorting="True" DataKeyNames="id" 
                      AllowPaging="True" OnPageIndexChanging="PaginateGridView" 
                      PageSize="5" PagerSettings-Mode="Numeric"
@@ -112,7 +112,7 @@
                 <asp:Label ID="Model_Del" Text="" runat="server"></asp:Label><br />
                 
                 <div id="Table1">
-                    <asp:GridView ID="GridView2" OnSorting="SortRecords_Models" runat="server"
+                    <asp:GridView ID="GridView2" CssClass="GridView" OnSorting="SortRecords_Models" runat="server"
                          AllowSorting="True" DataKeyNames="id" 
                          AllowPaging="True" OnPageIndexChanging="PaginateGridView_Models" 
                          PageSize="5" PagerSettings-Mode="Numeric"
@@ -134,8 +134,8 @@
                 <h3>Fémek</h3>
                 <asp:Label ID="Mat_Del" Text="" runat="server"></asp:Label><br />
                 
-                <div id="Table1">
-                    <asp:GridView ID="GridView3" OnSorting="SortRecords_Mat" runat="server"
+                <div id="Table1"> 
+                    <asp:GridView ID="GridView3" CssClass="GridView" OnSorting="SortRecords_Mat" runat="server"
                          AllowSorting="True" DataKeyNames="id" 
                          AllowPaging="True" OnPageIndexChanging="PaginateGridView_Mat" 
                          PageSize="5" PagerSettings-Mode="Numeric"
@@ -158,7 +158,7 @@
                 <asp:Label ID="Gem_Del" Text="" runat="server"></asp:Label><br />
                 
                 <div id="Table1">
-                    <asp:GridView ID="GridView4" OnSorting="SortRecords_Gem" runat="server"
+                    <asp:GridView ID="GridView4" CssClass="GridView" OnSorting="SortRecords_Gem" runat="server"
                          AllowSorting="True" DataKeyNames="id" 
                          AllowPaging="True" OnPageIndexChanging="PaginateGridView_Gem" 
                          PageSize="5" PagerSettings-Mode="Numeric"
